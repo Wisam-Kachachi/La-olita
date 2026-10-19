@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# La Olita
 
-## Getting Started
+Svensk sajt för restaurangen och food trucken på Skånegatan 87, Nytorget.
 
-First, run the development server:
+## Köra lokalt
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Öppna [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Bordsbokning
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Formuläret på `/boka` börjar på dagens datum. Restaurangen har 40 platser (`platser` i `src/content/site.ts`). En bokning håller de platserna i 1,5 timme, och tider som inte rymmer sällskapet går inte att välja. Bokningarna sparas i `data/bookings.json`.
 
-## Learn More
+Kopiera `.env.example` till `.env.local` och fyll i SMTP om restaurangen också ska få ett mejl. Bokningen sparas även utan SMTP.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`BOOKING_TO_EMAIL` är mottagaren. Standard är `laolita.swe@gmail.com`.
